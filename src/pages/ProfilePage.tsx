@@ -11,7 +11,7 @@ import { useProfile } from "../context/ProfileContext";
 
 const ProfilePage: React.FC = () => {
   const { username } = useParams<{ username: string }>();
-  const { fetchUserProfile, loading, error } = useProfile();
+  const { fetchUserProfile, fetchContributionsByYear, loading, error, user } = useProfile();
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const { profilePage, activityOverview } = profileConfig.texts;
 
@@ -20,6 +20,12 @@ const ProfilePage: React.FC = () => {
       fetchUserProfile(username);
     }
   }, [username]);
+
+  useEffect(() => {
+    if (username && user && selectedYear) {
+      fetchContributionsByYear(username, selectedYear);
+    }
+  }, [selectedYear, username, user]);
 
   const yearOptions = useMemo(
     () => Array.from({ length: 11 }, (_, i) => new Date().getFullYear() - i),

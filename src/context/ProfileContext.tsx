@@ -30,6 +30,15 @@ export const ProfileProvider: React.FC<{ children: ReactNode }> = ({ children })
     }
   };
 
+  const fetchContributionsByYear = async (username: string, year: number) => {
+    try {
+      const contributionsData = await fetchUserContributions(username, year);
+      setContributions(contributionsData);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to fetch contributions');
+    }
+  };
+
   return (
     <ProfileContext.Provider
       value={{
@@ -38,6 +47,7 @@ export const ProfileProvider: React.FC<{ children: ReactNode }> = ({ children })
         loading,
         error,
         fetchUserProfile,
+        fetchContributionsByYear,
       }}
     >
       {children}

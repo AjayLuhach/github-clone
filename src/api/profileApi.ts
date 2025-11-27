@@ -13,8 +13,12 @@ export const fetchGitHubUser = async (username: string): Promise<IGitHubUser> =>
   return response.json();
 };
 
-export const fetchUserContributions = async (username: string): Promise<IContributionData | null> => {
-  const response = await fetch(`${CONTRIBUTIONS_API}/${username}`);
+export const fetchUserContributions = async (
+  username: string,
+  year?: number
+): Promise<IContributionData | null> => {
+  const yearParam = year ? `?y=${year}` : '?y=last';
+  const response = await fetch(`${CONTRIBUTIONS_API}/${username}${yearParam}`);
 
   if (!response.ok) {
     return null;

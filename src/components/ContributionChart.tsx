@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 
 import profileConfig from '../config/profileConfig.json';
 import { useProfile } from '../context/ProfileContext';
-import type { IContributionDay } from '../types/global';
 
 interface IContributionCell {
   date: string;
@@ -28,29 +27,12 @@ const ContributionChart: React.FC<IContributionChartProps> = ({ selectedYear: pr
   const currentYear = new Date().getFullYear();
   const selectedYear = propSelectedYear ?? currentYear;
 
-  const generateRandomContributions = (year: number): IContributionDay[] => {
-    const data: IContributionDay[] = [];
-    const startDate = new Date(year, 0, 1);
-    const endDate = new Date(year, 11, 31);
-
-    const currentDate = new Date(startDate);
-    while (currentDate <= endDate) {
-      const count = Math.random() > 0.3 ? Math.floor(Math.random() * 20) : 0;
-      data.push({
-        date: currentDate.toISOString().split('T')[0],
-        count,
-      });
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-    return data;
-  };
-
   const contributionData = useMemo(() => {
     if (contributions?.contributions?.length) {
-      return contributions.contributions.filter((day) => new Date(day.date).getFullYear() === selectedYear);
+      return contributions.contributions;
     }
-    return generateRandomContributions(selectedYear);
-  }, [contributions, selectedYear]);
+    return [];
+  }, [contributions]);
 
   const { weeks, totalContributions, monthLabels } = useMemo(() => {
     const dataMap = new Map<string, number>();

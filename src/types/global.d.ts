@@ -137,4 +137,5 @@ export interface IProfileContextState {
 
 export interface IProfileContextValue extends IProfileContextState {
   fetchUserProfile: (username: string) => Promise<void>;
+  fetchContributionsByYear: (username: string, year: number) => Promise<void>;
 }
