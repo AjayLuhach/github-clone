@@ -1,0 +1,150 @@
+{
+  "defaultUsername": "shreeramk",
+  "tabs": {
+    "overview": "Overview",
+    "repositories": "Repositories",
+    "projects": "Projects",
+    "packages": "Packages",
+    "stars": "Stars"
+  },
+  "loaderMessages": [
+    "🐢 Slow network detected... fetching data from 1995...",
+    "⏳ Loading at dial-up speed...",
+    "📡 Connecting via carrier pigeon...",
+    "🦥 Please wait, our sloth is fetching your data...",
+    "💾 Reading from floppy disk...",
+    "🕰️ Time traveling to retrieve your files..."
+  ],
+  "showFollowButton": true,
+  "showSponsorButton": true,
+  "texts": {
+    "nav": {
+      "searchPlaceholder": "Type / to search",
+      "copilot": "Copilot",
+      "create": "Create new...",
+      "profile": "View profile and more",
+      "notifications": "Notifications",
+      "menu": "Open global navigation menu",
+      "issues": "Issues",
+      "pullRequests": "Pull requests"
+    },
+    "contributions": {
+      "learnHow": "Learn how we count contributions",
+      "less": "Less",
+      "more": "More"
+    },
+    "profilePage": {
+      "loading": "Loading profile...",
+      "errorTitle": "Error loading profile",
+      "activityTitle": "Activity overview",
+      "contributionActivityTitle": "Contribution activity",
+      "showMoreActivity": "Show more activity",
+      "privateRepoSuffix": "in private repositories"
+    },
+    "popularRepositories": {
+      "title": "Popular repositories",
+      "publicLabel": "Public",
+      "privateLabel": "Private",
+      "forkedFrom": "Forked from"
+    },
+    "activityOverview": {
+      "title": "Activity overview",
+      "categories": ["Commits", "Code review", "Issues", "Pull requests"]
+    }
+  },
+  "featureDescriptions": {
+    "Menu": "- Open navigation sidebar\n- Show repository quick access\n- Display recent items",
+    "Search": "- Search across all repositories\n- Jump to specific files\n- Find users and organizations",
+    "Create": "- Create new repository\n- Start new gist\n- Import repository",
+    "Copilot": "- AI-powered code suggestions\n- Chat with Copilot\n- Get code explanations",
+    "Notifications": "- Show unread notifications\n- View mentions\n- Track repository activity",
+    "Profile": "- Access account settings\n- View your profile\n- Sign out",
+    "Pull Requests": "- Review and merge pull requests\n- Track open PRs\n- View PR history",
+    "Issues": "- Track bugs and tasks\n- Assign and label issues\n- View issue timelines"
+  },
+  "mockData": {
+    "repositories": [
+      "awesome-project",
+      "react-demo",
+      "node-api",
+      "python-scripts",
+      "data-viz"
+    ],
+    "projects": [
+      "Project Alpha",
+      "Project Beta",
+      "Project Gamma"
+    ],
+    "packages": [
+      "@username/package-one",
+      "@username/package-two",
+      "@username/package-three"
+    ],
+    "popularRepositories": [
+      {
+        "name": "Complete-Python-3-Bootcamp",
+        "description": "Course Files for Complete Python 3 Bootcamp Course on Udemy",
+        "language": "Jupyter Notebook",
+        "languageColor": "#DA5B0B",
+        "isPublic": true,
+        "isFork": true,
+        "forkedFrom": "Pierian-Data/Complete-Python-3-Bootcamp"
+      },
+      {
+        "name": "flutter_login_ui",
+        "description": "https://youtu.be/RkaEbTlh444",
+        "language": "Dart",
+        "languageColor": "#00B4AB",
+        "isPublic": true,
+        "isFork": true,
+        "forkedFrom": "MarcusNg/flutter_login_ui"
+      },
+      {
+        "name": "gitignore",
+        "description": "A collection of useful .gitignore templates",
+        "language": "",
+        "languageColor": "",
+        "isPublic": true,
+        "isFork": true,
+        "forkedFrom": "github/gitignore"
+      },
+      {
+        "name": "node-opcua-logger",
+        "description": "An OPCUA Client for logging data to InfluxDB! 🔥 📊",
+        "language": "JavaScript",
+        "languageColor": "#f1e05a",
+        "isPublic": true,
+        "isFork": true,
+        "forkedFrom": "coussej/node-opcua-logger"
+      },
+      {
+        "name": "kafkajs",
+        "description": "A modern Apache Kafka client for node.js",
+        "language": "JavaScript",
+        "languageColor": "#f1e05a",
+        "isPublic": true,
+        "isFork": true,
+        "forkedFrom": "tulios/kafkajs"
+      },
+      {
+        "name": "node-opcua-1",
+        "description": "an implementation of a OPC UA stack fully written in javascript and nodejs - http://node-opcua.github.io/",
+        "language": "TypeScript",
+        "languageColor": "#3178c6",
+        "isPublic": true,
+        "isFork": true,
+        "forkedFrom": "node-opcua/node-opcua"
+      }
+    ],
+    "activityBreakdown": {
+      "commits": 81,
+      "codeReview": 10,
+      "issues": 9,
+      "pullRequests": 19
+    },
+    "privateContributions": {
+      "count": 171,
+      "dateRange": "Nov 1 – Nov 27"
+    }
+  }
+}
