@@ -47,15 +47,15 @@ const ProfileTabs: React.FC = () => {
   ];
 
   return (
-    <nav className="border-b border-line lg:-mx-8 px-4 lg:px-8 w-full">
-      <div className="flex gap-2">
+    <nav className="border-b border-line lg:-mx-8 px-4 lg:px-8 w-full overflow-x-auto customscrollbar-none">
+      <div className="flex gap-2 min-w-max">
         {tabs.map((tab) => (
           <NavLink
             key={tab.path}
             to={tab.path}
             end={tab.end}
             className={({ isActive }) =>
-              `flex items-center gap-2 px-4 py-3 border-b-2 text-sm transition-colors ${
+              `flex shrink-0 items-center gap-2 whitespace-nowrap px-3 sm:px-4 py-3 border-b-2 text-sm transition-colors ${
                 isActive
                   ? 'border-tabActive text-fg font-semibold'
                   : 'border-transparent text-muted hover:text-fg hover:border-emphasis'

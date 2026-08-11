@@ -53,17 +53,17 @@ const LayoutTopNav: React.FC = () => {
           onClose={() => setToast(null)}
         />
       )}
-      <header className="bg-insetBg border-b border-line max-w-full w-full top-0 left-0 right-0 z-50 overflow-hidden max-md:overflow-auto customscrollbar-none">
-        <div className="flex items-center p-2 gap-4 w-full justify-between">
-          <div className="flex items-center gap-2">
+      <header className="bg-insetBg border-b border-line max-w-full w-full top-0 left-0 right-0 z-50">
+        <div className="flex items-center p-2 gap-2 sm:gap-4 w-full justify-between">
+          <div className="flex items-center gap-1 sm:gap-2 min-w-0">
             <button
               onClick={() => handleDummyClick('menu')}
               onMouseEnter={() => setShowTooltip('menu')}
               onMouseLeave={() => setShowTooltip(null)}
-              className="p-2 text-muted hover:text-white hover:bg-btnHover rounded-md transition-colors relative"
+              className="p-1.5 sm:p-2 text-muted hover:text-white hover:bg-btnHover rounded-md transition-colors relative shrink-0"
               aria-label={nav.menu}
             >
-              <LuSquareMenu className="text-3xl" />
+              <LuSquareMenu className="text-2xl sm:text-3xl" />
               {showTooltip === 'menu' && (
                 <div className="absolute top-full left-0 mt-2 px-2 py-1 bg-subtle text-xs text-white rounded shadow-lg whitespace-nowrap z-50 border border-line">
                   {nav.menu}
@@ -73,16 +73,16 @@ const LayoutTopNav: React.FC = () => {
 
             <Link
               to="/"
-              className="text-white hover:text-muted transition-colors"
+              className="text-white hover:text-muted transition-colors shrink-0"
             >
-              <AiFillGithub className="w-8 h-8" />
+              <AiFillGithub className="w-7 h-7 sm:w-8 sm:h-8" />
             </Link>
 
             {user && (
-              <div className="hidden md:flex items-center text-sm">
+              <div className="hidden md:flex items-center text-sm min-w-0">
                 <Link
                   to={`/profile/${user.login}`}
-                  className="text-white hover:underline font-semibold"
+                  className="text-white hover:underline font-semibold truncate"
                 >
                   {user.login}
                 </Link>
@@ -90,20 +90,23 @@ const LayoutTopNav: React.FC = () => {
             )}
           </div>
 
-          <div className="flex items-center gap-2">
-            <div className="relative">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+            <div className="relative shrink-0">
               <button
                 onClick={() => handleDummyClick('search')}
                 className="text-left"
+                aria-label={featureLabels.search}
               >
-                <div className="flex items-center bg-canvas border border-line rounded-md px-3 py-1.5 text-sm hover:border-emphasis transition-colors w-64">
-                  <FiSearch className="w-4 h-4 text-muted mr-2" />
-                  <span className="text-muted">{nav.searchPlaceholder}</span>
+                <div className="flex items-center bg-canvas border border-line rounded-md px-2 py-2 md:px-3 md:py-1.5 text-sm hover:border-emphasis transition-colors md:w-48 lg:w-64">
+                  <FiSearch className="w-4 h-4 text-muted shrink-0 md:mr-2" />
+                  <span className="hidden md:inline text-muted truncate">
+                    {nav.searchPlaceholder}
+                  </span>
                 </div>
               </button>
             </div>
 
-            <div className="relative">
+            <div className="relative hidden sm:block">
               <button
                 onClick={() => handleDummyClick('copilot')}
                 onMouseEnter={() => setShowTooltip('copilot')}
@@ -124,9 +127,9 @@ const LayoutTopNav: React.FC = () => {
                 </div>
               )}
             </div>
-            <div className="h-6 w-px bg-line"></div>
+            <div className="hidden sm:block h-6 w-px bg-line"></div>
 
-            <div className="relative">
+            <div className="relative shrink-0">
               <button
                 onClick={() => handleDummyClick('create')}
                 onMouseEnter={() => setShowTooltip('create')}
@@ -197,7 +200,7 @@ const LayoutTopNav: React.FC = () => {
               )}
             </div>
 
-            <div className="relative">
+            <div className="relative shrink-0">
               <button
                 onClick={() => handleDummyClick('notifications')}
                 onMouseEnter={() => setShowTooltip('notifications')}
@@ -225,7 +228,7 @@ const LayoutTopNav: React.FC = () => {
               )}
             </div>
 
-            <div className="relative">
+            <div className="relative shrink-0">
               <button
                 onClick={() => handleDummyClick('profile')}
                 onMouseEnter={() => setShowTooltip('profile')}
@@ -237,7 +240,7 @@ const LayoutTopNav: React.FC = () => {
                   <img
                     src={user.avatar_url}
                     alt={user.login}
-                    className="w-8 h-8 rounded-full"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full"
                   />
                 ) : (
                   <div className="w-6 h-6 rounded-full bg-btn"></div>
