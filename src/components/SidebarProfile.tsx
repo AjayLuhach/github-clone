@@ -1,6 +1,7 @@
 import React from "react";
 import { useProfile } from "../context/ProfileContext";
 import profileConfig from "../config/profileConfig.json";
+import Avatar from "./Avatar";
 
 const SidebarProfile: React.FC = () => {
   const { user } = useProfile();
@@ -11,10 +12,11 @@ const SidebarProfile: React.FC = () => {
     <div className="w-full lg:w-[296px] flex-shrink-0">
       <div className="sticky top-4">
         <div className="relative mb-4">
-          <img
+          <Avatar
             src={user.avatar_url}
-            alt={user.name || user.login}
+            name={user.name || user.login}
             className="w-full aspect-square rounded-full border border-line"
+            fallbackTextClassName="text-[64px]"
           />
         </div>
 

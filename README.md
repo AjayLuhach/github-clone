@@ -20,12 +20,11 @@ A React application that replicates GitHub's profile page design with real-time 
 ```
 src/
   components/
+    Avatar.tsx
     LayoutTopNav.tsx
     SidebarProfile.tsx
     ProfileTabs.tsx
     ContributionChart.tsx
-    UserStats.tsx
-    UserInfoSection.tsx
     PopularRepositories.tsx
   pages/
     ProfilePage.tsx

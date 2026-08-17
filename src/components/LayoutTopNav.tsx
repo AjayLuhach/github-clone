@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 import profileConfig from '../config/profileConfig.json';
 import { useProfile } from '../context/ProfileContext';
+import Avatar from './Avatar';
 import CopilotIcon from './icons/CopilotIcon';
 import ProfileTabs from './ProfileTabs';
 import Toast from './Toast';
@@ -237,10 +238,11 @@ const LayoutTopNav: React.FC = () => {
                 aria-label={nav.profile}
               >
                 {user ? (
-                  <img
+                  <Avatar
                     src={user.avatar_url}
-                    alt={user.login}
+                    name={user.login}
                     className="w-7 h-7 sm:w-8 sm:h-8 rounded-full"
+                    fallbackTextClassName="text-[10px]"
                   />
                 ) : (
                   <div className="w-6 h-6 rounded-full bg-btn"></div>
